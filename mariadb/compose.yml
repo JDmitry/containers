@@ -1,0 +1,13 @@
+version: '3.1'
+
+services:
+  mariadb:
+    image: mariadb
+    cpus: 0.2
+    restart: always
+    environment:
+      MARIADB_ROOT_PASSWORD: 1111
+    volumes:
+      - data_mariadb:/var/lib/mysql
+volumes:
+  data_mariadb:
