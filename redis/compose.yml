@@ -1,0 +1,18 @@
+# sudo docker exec -it <c_id> redis-server
+# sudo docker exec -it <c_id> redis-cli
+
+version: '3.3'
+
+services:
+  redis:
+    image: redis
+    cpus: 0.2
+    restart: always
+    volumes:
+      - redis-db:/root/redis
+      - redis-db:/usr/local/etc/redis/redis.conf
+    environment:
+      - REDIS_PASSWORD=1111
+
+volumes:
+  redis-db:
